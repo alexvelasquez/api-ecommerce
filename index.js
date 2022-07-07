@@ -4,6 +4,16 @@ const PORT = process.env.PORT || 8001;
 
 const productos = require("./db/productos.json");
 const categorias = require("./db/categorias.json");
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
+
+
 app.listen(
     PORT,
     () => console.log(`listening on http:localhost:${PORT}`)
