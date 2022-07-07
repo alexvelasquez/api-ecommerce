@@ -8,6 +8,10 @@ app.listen(
     () => console.log(`listening on http:localhost:${PORT}`)
 )
 
+app.get('/', (req, res) => {
+    res.status(200).send("Bienvenido")
+})
+
 app.get('/productos', (req, res) => {
     const { categoria } = req.query
     let response = productos;
