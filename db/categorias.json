@@ -1,0 +1,18 @@
+[
+    {
+        "id":1,
+        "nombre":"DEPORTE"
+    },
+    {
+        "id":2,
+        "nombre":"MÚSICA"
+    },
+    {
+        "id":3,
+        "nombre":"TECNOLOGÍA"
+    },
+    {
+        "id":4,
+        "nombre":"HOGAR"
+    }
+]

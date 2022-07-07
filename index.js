@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8001;
 
-const productos = require("./productos.json");
+const productos = require("./db/productos.json");
+const categorias = require("./db/categorias.json");
 app.listen(
     PORT,
     () => console.log(`listening on http:localhost:${PORT}`)
@@ -13,9 +14,13 @@ app.get('/', (req, res) => {
 })
 
 app.get('/productos', (req, res) => {
-    const { categoria } = req.query
+    let { categoria, nombre } = req.query
     let response = productos;
-    if(categoria){
+    if(nombre && nombre.trim() != ''){
+        nombre = nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        response = response.filter(p=>p.nombre.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(nombre))
+    }
+    if(categoria && categoria.trim() != ''){
         response = response.filter(p=>p.categoria.id == categoria) 
     }
     res.status(200).send(response)
@@ -29,3 +34,6 @@ app.get('/productos/:id', (req, res) => {
     res.status(200).send({})
 })
 
+app.get('/categorias', (req, res) => {
+    res.status(200).send(categorias)
+})

@@ -102,5 +102,18 @@
     },
     "imagen": "https://images.pexels.com/photos/1123262/pexels-photo-1123262.jpeg?auto=compress&cs=tinysrgb&h=350",
     "stock": 50
+  },
+  {
+    "id":9,
+    "nombre": "Guitarra eléctrica SX EF3",
+    "descripcion": "Cuenta con pastillas, tono independiente y controles de volumen para cada elemento, lo que produce distintos resultados",
+    "fecha_publicacion": "10/03/2022",
+    "precio": 37000,
+    "categoria": {
+      "id": 4,
+      "nombre": "MÚSICA"
+    },
+    "imagen": "https://images.pexels.com/photos/1864637/pexels-photo-1864637.jpeg?auto=compress&cs=tinysrgb&h=350",
+    "stock": 2
   }
 ]
