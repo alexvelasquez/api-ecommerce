@@ -110,7 +110,7 @@
     "fecha_publicacion": "10/03/2022",
     "precio": 37000,
     "categoria": {
-      "id": 4,
+      "id": 2,
       "nombre": "MÚSICA"
     },
     "imagen": "https://images.pexels.com/photos/1864637/pexels-photo-1864637.jpeg?auto=compress&cs=tinysrgb&h=350",
